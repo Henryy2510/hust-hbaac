@@ -1,0 +1,19 @@
+[project]
+name = "hust"
+version = "0.1.0"
+description = "SKU-level demand forecasting pipeline for 56-day horizon"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.0.0",
+    "pandas>=2.2.0",
+    "lightgbm>=4.3.0",
+    "scikit-learn>=1.5.0",
+    "pyyaml>=6.0.0",
+    "ipykernel>=7.2.0",
+    "xgboost>=3.2.0",
+    "matplotlib>=3.10.9",
+    "plotly>=6.7.0",
+    "seaborn>=0.13.2",
+    "torch>=2.12.0",
+]
