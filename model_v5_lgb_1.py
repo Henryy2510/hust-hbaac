@@ -24,7 +24,7 @@ except Exception:
     HAS_XGB = False
 
 VERSION = "v5_lgb_1"
-TRAIN_PATH = "old/train_fixed_ffill.csv"
+TRAIN_PATH = "./data/train_fixed_ffill.csv"
 SUB_PATH = "sample_submission.csv"
 OUT_PATH = "submission_v5_lgb_1.csv"
 METRICS_PATH = "metrics_v5_lgb_1.json"
