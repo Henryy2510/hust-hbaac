@@ -27,6 +27,12 @@ uv sync
 
 # Activate virtual environment (Choose "datathon" kernel)
 source .venv/bin/activate # Cho Mac/Linux
-.venv\Scripts\activate       # Cho Windows 
+.venv\Scripts\activate       # Cho Windows
+
+# Chạy file code:
+# File nộp trên kaggle: model.ipynb
+# File build mới nhất nhưng crash không up kịp lên kaggle:
+uv run model_v6_lgb_1.py
+
 ```
 
