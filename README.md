@@ -29,7 +29,4 @@ uv sync
 source .venv/bin/activate # Cho Mac/Linux
 .venv\Scripts\activate       # Cho Windows 
 ```
-![alt text](pick_kernel.png)
-- Quantity is aggregated to daily net demand per SKU.
-- Negative net demand can occur in history due to returns; predictions are clipped to non-negative.
-- Submission is generated from `sample_submission.csv` ids and preserves exact row set.
+
