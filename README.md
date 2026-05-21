@@ -1,40 +1,35 @@
 # HUST Demand Forecasting Baseline
+## Hướng dẫn reproduce
 
-56-day SKU demand forecasting pipeline for:
-- `train.csv` (history)
-- `sample_submission.csv` (required submission shape)
+### Yêu cầu
+- **Python 3.11+**
+- **[uv](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_2)** — Python package manager
+    ```bash
+    pip install uv
+    # or
+    powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+    ```
+  - For **[Mac/Linux](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_1)**
+    ```bash
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    # or
+    wget -qO- https://astral.sh/uv/install.sh | sh
+    # or
+    pip install uv
+    ```
+- **xelatex** — để compile báo cáo LaTeX (nếu cần)
 
-## Setup
-
-```bash
-python -m pip install -U pip
-python -m pip install -e .
-```
-
-## Run Training + Submission
-
-```bash
-python train_model.py \
-  --train train.csv \
-  --sample sample_submission.csv \
-  --config config.yaml \
-  --out submission.csv \
-  --metrics-out metrics.json \
-  --importance-out feature_importance.csv
-```
-
-## Run Local Backtest
+### 1. Cài đặt môi trường
 
 ```bash
-python validate.py \
-  --train train.csv \
-  --config config.yaml \
-  --cutoffs 2025-07-01,2025-08-01 \
-  --out backtest_metrics.json
+# Cài đặt dependencies
+uv sync
+
+# Activate virtual environment (Choose "datathon" kernel)
+source .venv/bin/activate # Cho Mac/Linux
+.venv\Scripts\activate       # Cho Windows 
 ```
-
-## Notes
-
+![alt text](pick_kernel.png)
 - Quantity is aggregated to daily net demand per SKU.
 - Negative net demand can occur in history due to returns; predictions are clipped to non-negative.
 - Submission is generated from `sample_submission.csv` ids and preserves exact row set.
